@@ -115,6 +115,7 @@ jobs:
     needs: [lint, typecheck, vitest, cypress]
     runs-on: ubuntu-latest
 
+
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v4
@@ -145,6 +146,7 @@ jobs:
         run: npm i -g @architect/architect
 
       - name: 🚀 Staging Deploy
+        environment: staging
         if: github.ref == 'refs/heads/dev'
         run: arc deploy --staging --prune
         env:
@@ -153,6 +155,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: 🚀 Production Deploy
+        environment: production
         if: github.ref == 'refs/heads/main'
         run: arc deploy --production --prune
         env:
