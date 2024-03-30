@@ -9,6 +9,8 @@ preferences.arc
 sam.json
 sam.yaml
 .env
+.idea
+.idea/
 
 /cypress/screenshots
 /cypress/videos
