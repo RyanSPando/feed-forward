@@ -1,12 +1,12 @@
 @app
-grunge-stack-template
+feed-forward-8b6e
 
 @aws
 runtime nodejs18.x
 # concurrency 1
 # memory 1152
 # profile default
-# region us-west-1
+# region us-east-1
 # timeout 30
 
 @http
