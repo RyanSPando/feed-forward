@@ -117,6 +117,7 @@ jobs:
     environment: production
 
 
+
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v4
@@ -154,7 +155,9 @@ jobs:
 #          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
 #          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
+
       - name: 🚀 Production Deploy
+        environment: production
         if: github.ref == 'refs/heads/main'
         run: arc deploy --production --prune
         env:
